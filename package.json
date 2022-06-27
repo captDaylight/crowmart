@@ -1,0 +1,30 @@
+{
+  "name": "crowmart",
+  "version": "1.0.0",
+  "description": "Crow Test",
+  "engines": {
+    "node": ">=15 <17"
+  },
+  "scripts": {
+    "dev": "npx parcel *.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/captDaylight/crowmart.git"
+  },
+  "author": "Paul Christophe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/captDaylight/crowmart/issues"
+  },
+  "homepage": "https://github.com/captDaylight/crowmart#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "parcel": "^2.6.2",
+    "typescript": "^4.7.4"
+  }
+}
