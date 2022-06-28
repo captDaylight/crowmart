@@ -6,12 +6,15 @@ export default (): {
 } => {
   const cart = getCart();
 
+  const cartCount = cart
+    .reduce((prev, crowItem) => prev + crowItem.quantity, 0);
+
   const cartCost = cart
-    .reduce((prev, crowItem) => prev + crowItem.price, 0)
+    .reduce((prev, crowItem) => prev + crowItem.price * crowItem.quantity, 0)
     .toFixed(2);
 
   return {
-    cartCount: cart.length,
+    cartCount,
     cartCost,
   };
 };

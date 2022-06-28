@@ -1,7 +1,21 @@
 import handleAddToCartClick from './handleAddToCartClick';
 import getCartCountAndCost from './getCartCountAndCost';
+import postEventRequest from './postEventRequest';
+import generateRequestData from './generateRequestData';
 
-// attach listener to add to cart button
+// send initial request to Black Crow
+postEventRequest(
+  'view',
+  generateRequestData(
+    'CrowMart',
+    window.location.pathname === '/' ? 'home' : 'other',
+    'HARDCODED_VISITOR_ID', // TODO
+  ),
+).then((res) => {
+  console.log('BLACK CROW EVENT RESPONSE: ', res);
+});
+
+// attach event listener to add-to-cart button
 document.querySelectorAll('.crow-item button').forEach((crowItemButton) => {
   crowItemButton.addEventListener('click', handleAddToCartClick);
 });

@@ -11,7 +11,24 @@ const getCart = (): CrowItem[] => {
 
 const addToCart = (crowItem: CrowItem): CrowItem[] => {
   const initialCart = getCart();
-  const updatedCart = [...initialCart, crowItem];
+  let updatedCart: CrowItem[];
+
+  if (initialCart.findIndex((item) => item.id === crowItem.id) > -1) {
+    // update the quantity of existing Crow Item
+    updatedCart = initialCart.map((item) => {
+      if (item.id !== crowItem.id) {
+        return item;
+      }
+      return {
+        ...item,
+        quantity: item.quantity + 1,
+      };
+    });
+  } else {
+    // add crow item
+    updatedCart = [...initialCart, { ...crowItem, quantity: 1 }];
+  }
+
   localStorage.setItem('cart', JSON.stringify(updatedCart));
 
   return updatedCart;
