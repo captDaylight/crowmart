@@ -12,7 +12,10 @@ postEventRequest(
     'HARDCODED_VISITOR_ID', // TODO
   ),
 ).then((res) => {
-  console.log('BLACK CROW EVENT RESPONSE: ', res);
+  console.log('BLACK CROW EVENT RESPONSE: ');
+  console.log('  ', res.message);
+  console.log('   version:    ', res.version);
+  console.log('   timestamp:  ', res.request_timestamp);
 });
 
 // attach event listener to add-to-cart button

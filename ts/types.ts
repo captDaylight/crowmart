@@ -16,5 +16,7 @@ export interface BlackCrowRequestBody {
 }
 
 export interface BlackCrowEventResponse {
-  event_id: string,
+  message: string,
+  request_timestamp: string,
+  version: string,
 }
