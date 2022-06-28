@@ -1,7 +1,7 @@
 import { addToCart } from './store';
 
-export default (event: PointerEvent) => {
-  const { parentElement } = event.target as HTMLButtonElement;
+export default (ev: Event) => {
+  const { parentElement } = ev.target as HTMLButtonElement;
 
   const id = parentElement?.dataset?.itemId;
   const name = parentElement?.querySelector('h4')?.innerHTML;
